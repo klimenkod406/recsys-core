@@ -1,5 +1,8 @@
 # recsys-core
 
+[![CI](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml/badge.svg)](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 The algorithmic core of a recommender, as **pure functions**: item-item
 collaborative filtering, MMR diversity re-ranking, Hacker-News trending, and
 time-decayed taste profiles.
@@ -49,6 +52,9 @@ index = build_index_from_user_items(user_items, min_cooccurrence=2)
 
 recommend_from_seen([10], index)
 # [(20, 0.91), (30, 0.86)]
+
+[![CI](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml/badge.svg)](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ```
 
 The algorithm:
@@ -86,6 +92,9 @@ embeddings = {
 
 mmr_select([(1, 0.9), (2, 0.9), (3, 0.85)], embeddings, limit=2, lambda_diversity=0.5)
 # [(1, 0.9), (3, 0.85)]  — item 2 was skipped as a near-duplicate
+
+[![CI](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml/badge.svg)](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ```
 
 `λ = 1` is pure relevance, `λ = 0` is pure diversity; the default `0.7` keeps
@@ -113,6 +122,9 @@ from recsys_core import hn_score
 
 hn_score(plays=100, hours_age=10)
 # (100 - 1) / (10 + 2) ** 1.8
+
+[![CI](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml/badge.svg)](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ```
 
 Two details matter: `plays - 1` keeps an item with no plays at zero instead
@@ -133,6 +145,9 @@ profile = build_profile([
 
 profile.item_weights
 # {10: 3.0, 20: 1.0}   — the playlist add is half a month old
+
+[![CI](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml/badge.svg)](https://github.com/klimenkod406/recsys-core/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ```
 
 `decay = 0.5 ** (days_old / HALF_LIFE_DAYS)`, so an event today is worth
