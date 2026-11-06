@@ -28,8 +28,8 @@ isolation.
                  hard filters     diversity
 ```
 
-Open-source reference implementation extracted from my commercial work on a
-music streaming platform (proprietary business logic removed).
+Open-source reference implementation extracted from my own open-source project
+MIYU — a music streaming platform with an AI service (MIT).
 
 ## Install
 
